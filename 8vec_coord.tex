@@ -1,0 +1,545 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Координаты (проекции) векторов}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Связь между координатами вектора и координатами
+его начала и конца}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Рассмотрим произвольный вектор $\vv{a}$ в прямоугольной системе координат.
+Опустив перпендикуляры из начала и конца вектора на оси системы координат,
+получим координаты начала и конца вектора: ($x_1, y_1$) и ($x_2, y_2$)
+соответственно.
+
+Говорят, что \textbf{каждая координата вектора равна разности соответствующих
+координат его конца и начала}.
+Вектор $\vv{a}$ имеет координаты {\large\{$x_2-x_1; y_2-y_1$\}}.
+
+Координаты вектора обозначают той же буквой, что и сам вектор, но без стрелки над ней
+и с нижним индексом, указывающим ось координат. Координаты вектора $\vv{a}$ можно записать
+как {\large\{$a_x; a_y$\}}.
+
+На рисунке~\ref{pic:vec_coord} определим координаты вектора $\vv{a}$:
+\begin{align*}
+  &x_2-x_1 = 7 -1 = 6,\\
+  &y_2-y_1 = 4-1=3.
+\end{align*}
+То есть координаты вектора $\vv{a}$ \{$6; 3$\}.
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        axis lines=middle,
+        axis line style = thick,
+        axis equal image,
+        grid=major,
+        xmin=-2,
+        xmax=9,
+        ymin=-2,
+        ymax=6,
+        xlabel=$x$,
+        ylabel=$y$,
+        xlabel style={below right},
+        ylabel style={left},
+        xtick={-1,...,8},
+        ytick={-1,...,5},
+        yticklabels={,,},
+        xticklabels={,,},
+        %axis on top,
+        %tick style={thick},
+        width=12cm
+      ]
+    \end{axis}
+    \coordinate (A) at (2.84cm,2.84cm);
+    \coordinate (B) at (8.535cm,5.685cm);
+    \coordinate [label=below:\large $x_1$](C) at (2.84cm,1.8cm);
+    \coordinate [label=below:\large $x_2$](D) at (8.535cm,1.887cm);
+    \coordinate [label=below:\large $0$](O) at (1.54cm,1.86cm);
+    \coordinate (CC) at (2.84cm,1.2cm);
+    \coordinate (DD) at (8.535cm,1.2cm);
+    \coordinate [label=left:\large $y_1$](E) at (1.8cm,2.84cm);
+    \coordinate [label=left:\large $y_2$](F) at (1.8cm,5.685cm);
+    \coordinate (EE) at (1.1cm,2.84cm);
+    \coordinate (FF) at (1.1cm,5.685cm);
+    
+    \draw [-Latex, ultra thick] (A) --  node[above left,black] {\large $\vv{a}$} (B);
+
+    \draw[dashed, thick] (A) -- (C);
+    \draw[dashed, thick] (A) -- (E);
+    \draw[dashed, thick] (B) -- (D);
+    \draw[dashed, thick] (B) -- (F);
+    \draw [decorate, decoration={brace, mirror, amplitude=10pt}] (CC) -- (DD);
+    \draw [left, decorate, decoration={brace, amplitude=10pt}] (EE) -- (FF);
+    \draw (5.6cm,0.4cm) node {\large $a_x = x_2 - x_1$};
+    \draw (-0.8cm,4.3cm) node {\large $a_y = y_2 - y_1$};
+  \end{tikzpicture}
+  \caption{\small Координаты вектора.}\label{pic:vec_coord}
+\end{figure}
+
+\textbf{В физике координаты векторных величин называют проекциями}.
+
+Например, $v_x$ \bdash проекция вектора скорости $\vv{v}$ на ось $Ox$.
+
+\textbf{Значения проекций векторов могут быть отрицательными, положительными или равными нулю}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Связь между координатами вектора, его модулем
+и углом между вектором и одной из осей координат}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+На практике \textbf{при решении задач по физике}
+возможно определить координаты начала и конца
+лишь для вектора перемещения. Во всех остальных случаях очень удобно
+опрелять проекции векторов, зная их модуль и угол, который вектор
+составляет с одной из осей координат.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Вектор параллелен или перпендикулярен оси координат}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Рассмотрим векторы $\vv{a}$ и $\vv{g}$, длины которых известны и равны $a$ и $g$
+соответственно, в прямоугольной системе координат (рисунок~\ref{pic:vec_coord0}).
+Пусть вектор $\vv{a}$ параллелен оси $Ox$
+и его направление совпадает с направлением оси $Ox$,
+вектор $\vv{g}$ параллелен оси $Oy$
+и его направление противоположно направлению оси $Oy$.
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        axis lines=middle,
+        axis line style = thick,
+        axis equal image,
+        grid=major,
+        xmin=-2,
+        xmax=9,
+        ymin=-2,
+        ymax=6,
+        xlabel=$x$,
+        ylabel=$y$,
+        xlabel style={below right},
+        ylabel style={left},
+        xtick={-1,...,8},
+        ytick={-1,...,5},
+        yticklabels={,,},
+        xticklabels={,,},
+        %tick style={thick},
+        width=12cm
+      ]
+    \end{axis}
+    % a
+    \coordinate (A) at (2.84cm,2.84cm);
+    \coordinate (B) at (6.63cm,2.84cm);
+    \coordinate [label=below:$x_1$](C) at (2.84cm,1.8cm);
+    \coordinate [label=below:$x_2$](D) at (6.63cm,1.8cm);
+    \coordinate [label=below:\large $0$](O) at (1.54cm,1.86cm);
+    \coordinate (CC) at (2.84cm,1.2cm);
+    \coordinate (DD) at (6.63cm,1.2cm);
+    \coordinate (E) at (1.8cm,2.84cm);
+    % g
+    \coordinate [label=left:$y_1$](CCC) at (1.8cm,6.63cm);
+    \coordinate [label=left:$y_2$](DDD) at (1.8cm,3.78cm);
+    \coordinate (FF) at (1.1cm,6.63cm);
+    \coordinate (EE) at (1.1cm,3.78cm);
+    \coordinate (F) at (8.535cm,1.88cm);
+    \coordinate (FFF) at (8.535cm,6.63cm);
+    \coordinate (EEE) at (8.535cm,3.78cm);
+    %a
+    \draw [-Latex, ultra thick] (A) --  node[above,black] {\large $\vv{a}$} (B);
+    %g
+    \draw [-Latex, ultra thick] (FFF) --  node[right,black] {\large $\vv{g}$} (EEE);
+    
+    \draw[dashed, thick] (A) -- (C);
+    \draw[dashed, thick] (E) -- (A);
+    \draw[dashed, thick] (CCC) -- (FFF);
+    \draw[dashed, thick] (DDD) -- (EEE);
+    
+    % right angle
+    \draw (1.9,2.55)-|(2.2,2.85);
+    \draw (8.235,1.89)|-(8.535,2.19);
+
+    \draw[dashed, thick] (B) -- (D);
+    \draw[dashed, thick] (EEE) -- (F);
+    \draw [decorate, decoration={brace, mirror, amplitude=10pt}] (CC) -- (DD);
+    \draw [left, decorate, decoration={brace, amplitude=10pt}] (EE) -- (FF);
+    \draw (5cm,0.5cm) node {$\hly{a_x=x_2 - x_1 = a}$};
+    \draw (1cm,2.8cm) node {$\hly{a_y=0}$};
+    \draw (8.55cm,1.4cm) node {$\hlt{g_x=0}$};
+    \draw (-1.2cm,5.2cm) node {$\hlt{g_y=y_2-y_1 = -g}$};
+  \end{tikzpicture}
+  \caption{\small Определение проекций векторов, параллельного и перпендикулярного
+    оси координат.}\label{pic:vec_coord0}
+\end{figure}
+
+Для определения координат вектора $\vv{a}$ опустим перпендикуляры из начала и конца
+вектора на оси координат и определим разности координат начала и конца вектора.
+Обратим внимание, что разность координат $x_2-x_1$ по оси $Ox$ в точности
+равна длине $a$ вектора. А разность координат по оси $Oy$ равна нулю, так как
+координаты начала и конца вектора $\vv{a}$ по этой оси совпадают.
+Итак:
+\begin{align*}
+  &a_x = a,\\
+  &a_y = 0.
+\end{align*}
+
+Аналогично для определения координат вектора $\vv{g}$ опустим перпендикуляры из начала и конца
+вектора на оси координат и определим разности координат начала и конца вектора.
+Модуль разности координат $|y_2-y_1|$ по оси $Oy$ в точности
+равна длине $g$ вектора. У вектора $\vv{g}$ координата конца меньше,
+чем координата начала $y_2<y_1$, поэтому координата $g_y=y_2-y_1$ будет меньше нуля.
+А разность координат по оси $Ox$ равна нулю, так как
+координаты начала и конца вектора $\vv{g}$ по этой оси совпадают.
+Получаем:
+\begin{align*}
+  &g_x  = 0,\\
+  &g_y = -g.
+\end{align*}
+
+Сделаем \textbf{важный вывод}:
+если направление вектора и оси координат совпадают, то его координата
+(проекция) на эту ось равна модулю вектора ($a_x = a$).
+Если же направление вектора и оси координат противоположны, то его координата
+на эту ось равна модулю вектора, взятому со знаком минус ($g_y = -g$).
+
+Запишем \textbf{2 шага по определению значения проекции вектора}:
+\begin{itemize}
+\item определяем знак проекции. Если начало вектора расположено ближе к началу
+  координат, проекция больше нуля. Если наоборот, то меньше нуля.
+  \item определяем модуль проекции.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Вектор направлен под произвольным углом к оси координат}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{1 Положительные проеции}\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Рассмотрим вектор $\vv{a}$, длина которого известна и равна $a$,
+в прямоугольной системе координат (рисунок~\ref{pic:vec_coord1}).
+Пусть угол между вектором $\vv{a}$ и горизонталью известен и равен $\upalpha$.
+Под таким углом вектор направлен к оси $Ox$, а также к любой другой прямой,
+параллельной оси $Ox$.
+
+Для определения его координат опустим перпендикуляры из начала и конца вектора
+на оси координат. Продлим перпендикуляр из начала вектора на ось $Oy$ до его пересечения
+с перпендикуляром из конца на ось $Ox$ в точке $B$.
+
+В получившимся прямоугольном треугольнике $ABC$ гипотенуза $AC = a$, а угол $\angle A = \upalpha$.
+Обратим внимание на катеты в этом треугольнике.
+Катет $AB$ в точности равен разности координат на ось $Ox$ конца и начала вектора $\vv{a}$, то есть
+$AB = a_x = x_2-x_1$. А катет $BC$ равен разности координат
+конца и начала вектора на ось $Oy$: $BC = a_y = y_2-y_1$.
+
+Вспомним соотношения в прямоугольном треугольнике:
+\begin{itemize}
+\item \textbf{синус} \bdash отношение противолежащего к углу катета к гипотенузе,
+\item \textbf{косинус} \bdash отношение прилежащего к углу катета к гипотенузе,
+\item \textbf{тангенс} \bdash отношение противолежащего к углу катета к прилежащему.
+\end{itemize}
+
+% положительные проекции
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        axis lines=middle,
+        axis line style = thick,
+        axis equal image,
+        grid=major,
+        xmin=-2,
+        xmax=9,
+        ymin=-2,
+        ymax=6,
+        xlabel=$x$,
+        ylabel=$y$,
+        xlabel style={below right},
+        ylabel style={left},
+        xtick={-1,...,8},
+        ytick={-1,...,5},
+        yticklabels={,,},
+        xticklabels={,,},
+        %tick style={thick},
+        width=12cm
+      ]
+    \end{axis}
+    \coordinate [label=above left:\large $A$](A) at (2.84cm,2.84cm);
+    \coordinate [label=above right:\large $C$](B) at (8.535cm,5.685cm);
+    \coordinate [label=below:\large $x_1$](C) at (2.84cm,1.8cm);
+    \coordinate [label=below:\large $x_2$](D) at (8.535cm,1.887cm);
+    \coordinate [label=below:\large $0$](O) at (1.54cm,1.86cm);
+    \coordinate (CC) at (2.84cm,1.2cm);
+    \coordinate (DD) at (8.535cm,1.2cm);
+    \coordinate [label=left:\large $y_1$](E) at (1.8cm,2.84cm);
+    \coordinate [label=left:\large $y_2$](F) at (1.8cm,5.685cm);
+    \coordinate (EE) at (1.1cm,2.84cm);
+    \coordinate (FF) at (1.1cm,5.685cm);
+    \coordinate [label=above right:\large $B$](GG) at (8.535cm,2.84cm);
+    
+    \draw [-Latex, ultra thick] (A) --  node[above left,black] {\large $\vv{a}$} (B);
+
+    \draw[dashed, thick] (A) -- (C);
+    \draw[dashed, thick] (E) -- (GG);
+    % right angle
+    \draw (8.235,2.84)|-(8.535,3.14);
+    % angle
+    \tkzMarkAngle[arc=l, size=1cm, mark=none](GG,A,B)
+    \tkzLabelAngle[pos = 1.4](GG,A,B){$\upalpha$}
+    \draw[dashed, thick] (B) -- (D);
+    \draw[dashed, thick] (B) -- (F);
+    \draw [decorate, decoration={brace, mirror, amplitude=10pt}] (CC) -- (DD);
+    \draw [left, decorate, decoration={brace, amplitude=10pt}] (EE) -- (FF);
+    \draw (5.4cm,2.4cm) node {\large $\hly{a_x = a\cos{\upalpha}}$};
+    \draw (10.1cm,4.1cm) node {\large $\hly{a_y = a\sin{\upalpha}}$};
+    \draw (5.6cm,0.5cm) node {\large $a_x>0$};
+    \draw (0cm,4.2cm) node {\large $a_y>0$};
+  \end{tikzpicture}
+  \caption{\small Определение проекций вектора по его модулю
+    и углу к одной из осей координат.
+    Вектор с положительными проекциями по обеим осям координат.}\label{pic:vec_coord1}
+\end{figure}
+
+В нашем примере:
+\begin{align}
+  \hly{\sin{\upalpha} = \dfrac{a_y}{a},\quad \cos{\upalpha} = \dfrac{a_x}{a},\quad \tg{\upalpha} = \dfrac{a_y}{a_x}.}
+\end{align}
+
+Таким образом, координаты вектора $\vv{a}$ выражаются через его модуль
+и угол между вектором $\vv{a}$ и горизонталью через отношения в прямоугольном треугольнике:
+\begin{align}
+  &\hly{a_x = a\cos{\upalpha}},\\
+  &\hly{a_y = a\sin{\upalpha}}.
+\end{align}
+
+Обратим внимание, что проекции на обе оси координат положительны, так как 
+начало вектора расположено ближе к началу координат для обеих осей.
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{2 Отрицательные проеции}\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Рассмотрим случай, при котором координата начала вектора расположена
+дальше от начала координат, чем координата конца,
+и по оси $Ox$, и по оси $Oy$ (рисунок~\ref{pic:vec_coord2}).
+В этом случае, обе проекции вектора будут отрицательны. А их модули можно
+снова определить из прямоугольного треугольника через синус и косинус угла,
+под которым вектор направлен к горизонтали:
+\begin{align}
+  &a_x = -a\cos{\upalpha},\\
+  &a_y = -a\sin{\upalpha}.
+\end{align}
+
+% отрицательные проекции
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        axis lines=middle,
+        axis line style = thick,
+        axis equal image,
+        grid=major,
+        xmin=-2,
+        xmax=9,
+        ymin=-2,
+        ymax=6,
+        xlabel=$x$,
+        ylabel=$y$,
+        xlabel style={below right},
+        ylabel style={left},
+        xtick={-1,...,8},
+        ytick={-1,...,5},
+        yticklabels={,,},
+        xticklabels={,,},
+        %tick style={thick},
+        width=12cm
+      ]
+    \end{axis}
+    \coordinate [label=above left:\large $A$](A) at (2.84cm,2.84cm);
+    \coordinate [label=above right:\large $C$](B) at (8.535cm,5.685cm);
+    \coordinate [label=below:\large $x_2$](C) at (2.84cm,1.8cm);
+    \coordinate [label=below:\large $x_1$](D) at (8.535cm,1.887cm);
+    \coordinate [label=below:\large $0$](O) at (1.54cm,1.86cm);
+    \coordinate (CC) at (2.84cm,1.2cm);
+    \coordinate (DD) at (8.535cm,1.2cm);
+    \coordinate [label=left:\large $y_2$](E) at (1.8cm,2.84cm);
+    \coordinate [label=left:\large $y_1$](F) at (1.8cm,5.685cm);
+    \coordinate (EE) at (1.1cm,2.84cm);
+    \coordinate (FF) at (1.1cm,5.685cm);
+    \coordinate [label=above right:\large $B$](GG) at (8.535cm,2.84cm);
+    
+    \draw [-Latex, ultra thick] (B) --  node[above left,black] {\large $\vv{a}$} (A);
+
+    \draw[dashed, thick] (A) -- (C);
+    \draw[dashed, thick] (E) -- (GG);
+    % right angle
+    \draw (8.235,2.84)|-(8.535,3.14);
+    % angle
+    \tkzMarkAngle[arc=l, size=1cm, mark=none](GG,A,B)
+    \tkzLabelAngle[pos = 1.4](GG,A,B){$\upalpha$}
+    \draw[dashed, thick] (B) -- (D);
+    \draw[dashed, thick] (B) -- (F);
+    \draw [decorate, decoration={brace, mirror, amplitude=10pt}] (CC) -- (DD);
+    \draw [left, decorate, decoration={brace, amplitude=10pt}] (EE) -- (FF);
+    \draw (5.4cm,2.4cm) node {\large $\hly{a_x = -a\cos{\upalpha}}$};
+    \draw (10.2cm,4.1cm) node {\large $\hly{a_y = -a\sin{\upalpha}}$};
+    \draw (5.6cm,0.5cm) node {\large $a_x<0$};
+    \draw (0cm,4.2cm) node {\large $a_y<0$};
+  \end{tikzpicture}
+  \caption{\small Вектор с отрицательными проекциями по обеим осям координат.}\label{pic:vec_coord2}
+\end{figure}
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{3 Проекции разных знаков}\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+На рисунке~\ref{pic:vec_coord3} изображён вектор с проекциями разных знаков:
+с отрицательной проекцией по оси $Ox$ и положительной по оси $Oy$.
+Кроме того, в данном случае задан угол между вектором и вертикалью, поэтому
+в данном случае проекции вектора $\vv{a}$ будут следующие:
+\begin{align}
+  &a_x = -a\sin{\upalpha},\\
+  &a_y = a\cos{\upalpha}.
+\end{align}
+
+% проекции разных знаков
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        axis lines=middle,
+        axis line style = thick,
+        axis equal image,
+        grid=major,
+        xmin=-2,
+        xmax=9,
+        ymin=-2,
+        ymax=6,
+        xlabel=$x$,
+        ylabel=$y$,
+        xlabel style={below right},
+        ylabel style={left},
+        xtick={-1,...,8},
+        ytick={-1,...,5},
+        yticklabels={,,},
+        xticklabels={,,},
+        %tick style={thick},
+        width=12cm
+      ]
+    \end{axis}
+    \coordinate (A) at (2.84cm,2.84cm);
+    \coordinate (B) at (8.535cm,5.685cm);
+    \coordinate [label=below:\large $x_2$](C) at (2.84cm,1.8cm);
+    \coordinate [label=below:\large $x_1$](D) at (8.535cm,1.887cm);
+    \coordinate [label=below:\large $0$](O) at (1.54cm,1.86cm);
+    \coordinate (CC) at (2.84cm,1.2cm);
+    \coordinate (DD) at (8.535cm,1.2cm);
+    \coordinate [label=left:\large $y_1$](E) at (1.8cm,2.84cm);
+    \coordinate [label=left:\large $y_2$](F) at (1.8cm,5.685cm);
+    \coordinate (EE) at (1.1cm,2.84cm);
+    \coordinate (FF) at (1.1cm,5.685cm);
+    \coordinate (GG) at (8.535cm,2.84cm);
+    \coordinate (H) at (2.84cm,5.685cm);
+    
+    \draw [-Latex, ultra thick] (GG) --  node[above right,black] {\large $\vv{a}$} (H);
+
+    \draw[dashed, thick] (H) -- (C);
+    \draw[dashed, thick] (E) -- (GG);
+    %\draw[dashed, thick] (E) -- (GG);
+    % right angle
+    \draw (2.84,3.14)-|(3.14,2.84);
+    \draw (8.235,5.685)|-(8.535,5.385);
+    % angle
+    \tkzMarkAngle[arc=l, size=0.8cm, mark=none](B,GG,H)
+    \tkzLabelAngle[pos = 1.2](B,GG,H){$\upalpha$}
+    \tkzMarkAngle[arc=l, size=0.8cm, mark=none](A,H,GG)
+    \tkzLabelAngle[pos = 1.2](A,H,GG){$\upalpha$}
+    \draw[dashed, thick] (B) -- (D);
+    \draw[dashed, thick] (B) -- (F);
+    \draw [decorate, decoration={brace, mirror, amplitude=10pt}] (CC) -- (DD);
+    \draw [left, decorate, decoration={brace, amplitude=10pt}] (EE) -- (FF);
+    \draw (5.4cm,2.4cm) node {\large $\hly{a_x = -a\sin{\upalpha}}$};
+    \draw (10.2cm,4.1cm) node {\large $\hly{a_y = a\cos{\upalpha}}$};
+    \draw (5.6cm,0.5cm) node {\large $a_x<0$};
+    \draw (0cm,4.2cm) node {\large $a_y>0$};
+  \end{tikzpicture}
+  \caption{\small Вектор с отрицательной проекцией по оси $Ox$
+    и положительной по оси $Oy$.}\label{pic:vec_coord3}
+\end{figure}
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Вычисление длины вектора по его координатам}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Важнейшим следствием связи координат вектора и его модуля
+является возможность выполнить обратную операцию:
+вычислить длину вектора по его координатам.
+
+Длину вектора $\vv{a}$, координаты которого в выбранной
+прямоугольной системе координат равны \{$a_x; a_y$\}, можно
+найти \textbf{по теореме Пифагора} (рисунок~\ref{pic:vec_dl}):
+\begin{align}
+  &\hly{a = \sqrt{a_x^2 + a_y^2}}.
+\end{align}
+
+Так как проеции вектора равны разности координат его конца и начала
+$a_x = x_2 - x_1$, $a_y = y_2 - y_1$, то:
+\begin{align}
+  &\hly{a = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}}.
+\end{align}
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        axis lines=middle,
+        axis line style = thick,
+        axis equal image,
+        grid=major,
+        xmin=-2,
+        xmax=9,
+        ymin=-2,
+        ymax=6,
+        xlabel=$x$,
+        ylabel=$y$,
+        xlabel style={below right},
+        ylabel style={left},
+        xtick={-1,...,8},
+        ytick={-1,...,5},
+        yticklabels={,,},
+        xticklabels={,,},
+        %tick style={thick},
+        width=12cm
+      ]
+    \end{axis}
+    \coordinate (A) at (2.84cm,2.84cm);
+    \coordinate (B) at (8.535cm,5.685cm);
+    \coordinate [label=below:\large $x_1$](C) at (2.84cm,1.8cm);
+    \coordinate [label=below:\large $x_2$](D) at (8.535cm,1.887cm);
+    \coordinate [label=below:\large $0$](O) at (1.54cm,1.86cm);
+    \coordinate (CC) at (2.84cm,1.2cm);
+    \coordinate (DD) at (8.535cm,1.2cm);
+    \coordinate [label=left:\large $y_1$](E) at (1.8cm,2.84cm);
+    \coordinate [label=left:\large $y_2$](F) at (1.8cm,5.685cm);
+    \coordinate (EE) at (1.1cm,2.84cm);
+    \coordinate (FF) at (1.1cm,5.685cm);
+    \coordinate (GG) at (8.535cm,2.84cm);
+    
+    \draw [-Latex, ultra thick] (A) --  node[above left,black] {\large $\vv{a}$} (B);
+
+    \draw[dashed, thick] (A) -- (C);
+    \draw[dashed, thick] (E) -- (GG);
+    % right angle
+    \draw (8.235,2.84)|-(8.535,3.14);
+
+    \draw[dashed, thick] (B) -- (D);
+    \draw[dashed, thick] (B) -- (F);
+    \draw (5.8cm,2.4cm) node {\large $a_x$};
+    \draw (9.1cm,4.1cm) node {\large $a_y$};
+  \end{tikzpicture}
+  \caption{\small Вычисление длины вектора по его координатам.}\label{pic:vec_dl}
+\end{figure}
+

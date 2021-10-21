@@ -1,0 +1,134 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Сложение векторов}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Правило треугольника}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Пусть $\vv{a}$ и $\vv{b}$ \bdash два вектора. Отметим произвольную точку $A$
+и отложим от этой точки вектор $\vv{AB}$, равный $\vv{a}$. Затем от точки $B$
+(конец вектора $\vv{AB}$) отложим вектор $\vv{BC}$, равный $\vv{b}$.
+Вектор $\vv{AC}=\vv{c}$ называется \textbf{суммой векторов} $\vv{a}$ и $\vv{b}$.
+
+Таким образом, при построении суммы двух векторов начало второго вектора
+примыкает с концу первого и сумма замыкает образуемый ими треугольник.
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[thick]
+    \coordinate [label=below left:$A$] (A) at (0cm,0cm);
+    \coordinate [label=above:$B$] (B) at (3cm,3cm);
+    \coordinate [label=above:$C$](C) at (7cm,3cm);
+    \coordinate (D) at (-6cm,0cm);
+    \coordinate (E) at (-3cm,3cm);
+    \coordinate (F) at (-5cm,4cm);
+    \coordinate (G) at (-1cm,4cm);
+    
+    \draw [blue, -Latex, very thick] (A) -- node[above left,black] {\large $\vv{a}$} (B);
+    \draw [blue, -Latex, very thick] (B) -- node[above,black] {\large $\vv{b}$} (C);
+    \draw [red, -Latex, very thick] (A) -- node[below right,black] {\large $\vv{c} =\vv{a}+\vv{b}$} (C);
+    \draw [blue, -Latex, very thick] (D) -- node[above left,black] {\large $\vv{a}$} (E);
+    \draw [blue, -Latex, very thick] (F) -- node[above,black] {\large $\vv{b}$} (G);
+    
+    \draw [fill=black] (A) circle (1.5pt);% node [above] {A};
+    \draw [fill=black] (B) circle (1.5pt);% node [right] {B};
+    \draw [fill=black] (C) circle (1.5pt);
+  \end{tikzpicture}
+  \caption{\small Сложение векторов по правилу треугольника.}\label{pic:sum_tr}
+\end{figure}
+
+По правилу треугольника \textbf{удобно складывать}
+последовательные или одновременные
+\textbf{перемещения}.
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[thick]
+    \coordinate (A) at (0cm,0cm);
+    \coordinate (B) at (3cm,3cm);
+    \coordinate (C) at (7cm,3cm);
+
+    \draw [blue, -Latex, very thick] (A) -- node[above left,black] {\large $\vv{s_1}$} (B);
+    \draw [blue, -Latex, very thick] (B) -- node[above,black] {\large $\vv{s_2}$} (C);
+    \draw [red, -Latex, very thick] (A) -- node[below right,black] {\large $\vv{s} =\vv{s_1}+\vv{s_2}$} (C);
+  \end{tikzpicture}
+  \caption{\small Сложение перемещений по правилу треугольника.}\label{pic:sum_perem}
+\end{figure}
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Правило параллелограмма}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Для построения суммы двух векторов $\vv{a}$ и $\vv{b}$
+по правилу параллелограмма отметим произвольную точку $A$
+и отложим от этой точки вектор $\vv{AB}$, равный $\vv{a}$.
+Затем от этой же точки отложим вектор $\vv{AD}$, равный $\vv{b}$.
+Вектор $\vv{AC}=\vv{c}$ называется \textbf{суммой векторов} $\vv{a}$ и $\vv{b}$.
+
+Таким образом, при построении суммы двух векторов $\vv{a}$ и $\vv{b}$
+начала векторов совмещаются,
+и на них как на сторонах строится параллелограмм. Диагональ этого параллелограмма,
+проведённая из общего начала складываемых векторов, называется их суммой.
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[thick]
+    \coordinate [label=below left:$A$](A) at (0cm,0cm);
+    \coordinate [label=above:$B$](B) at (3cm,3cm);
+    \coordinate [label=above:$C$](C) at (7cm,3cm);
+    \coordinate (D) at (-6cm,0cm);
+    \coordinate (E) at (-3cm,3cm);
+    \coordinate (F) at (-5cm,4cm);
+    \coordinate (G) at (-1cm,4cm);
+    \coordinate [label=below:$D$] (H) at (4cm,0cm);
+
+    
+    \draw [blue, -Latex, very thick] (A) -- node[above left,black] {\large $\vv{a}$}(B);
+    \draw [dashed] (B) -- (C);
+    \draw [red, -Latex, very thick] (A) -- (C);
+    \draw [blue, -Latex, very thick] (A) -- node[below,black] {\large $\vv{b}$}(H);
+    \draw [dashed] (H) -- (C);
+    \draw [blue, -Latex, very thick] (D) -- node[above left,black] {\large $\vv{a}$}(E);
+    \draw [blue, -Latex, very thick] (F) -- node[above,black] {\large $\vv{b}$}(G);
+    
+    \draw [fill=black] (A) circle (1.5pt);% node [above] {A};
+    
+    \draw (8.3cm,2.6cm) node {\large $\vv{c} =\vv{a}+\vv{b}$};
+    
+  \end{tikzpicture}
+  \caption{\small Сложение векторов по правилу параллелограмма.}\label{pic:sum_par}
+\end{figure}
+
+По правилу параллелограмма \textbf{удобно складывать}
+приложенные к телу
+\textbf{силы}.
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[thick, scale = 0.8]
+    \coordinate (A) at (0cm,0cm);
+    \coordinate (B) at (3cm,3cm);
+    \coordinate (C) at (7cm,3cm);
+    \coordinate (H) at (4cm,0cm);
+   
+    \draw [blue, -Latex, very thick] (A) -- node[above left,black]{\large $\vv{F_1}$} (B);
+    \draw [dashed] (B) -- (C);
+    \draw [red, -Latex, very thick] (A) -- (C);
+    \draw [blue, -Latex, very thick] (A) -- node[below,black]{\large $\vv{F_2}$}(H);
+    \draw [dashed] (H) -- (C);
+
+    \draw (8cm,3.6cm) node {\large $\vv{F} =\vv{F_1}+\vv{F_2}$};
+  \end{tikzpicture}\hspace{1.4cm}
+  \begin{tikzpicture}[thick, scale = 0.8]
+    \coordinate (A) at (0cm,0cm);
+    \coordinate (B) at (-2cm,3cm);
+    \coordinate (C) at (2cm,3cm);
+    \coordinate (H) at (4cm,0cm);
+   
+    \draw [blue, -Latex, very thick] (A) -- node[below left,black]{\large $\vv{F_1}$}(B);
+    \draw [dashed] (B) -- (C);
+    \draw [red, -Latex, very thick] (A) -- (C);
+    \draw [blue, -Latex, very thick] (A) -- node[below,black]{\large $\vv{F_2}$}(H);
+    \draw [dashed] (H) -- (C);
+
+    \draw (3.2cm,3.6cm) node {\large $\vv{F} =\vv{F_1}+\vv{F_2}$};
+  \end{tikzpicture}
+  \caption{\small Сложение сил по правилу параллелограмма.}\label{pic:sum_sily}
+\end{figure}

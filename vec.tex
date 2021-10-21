@@ -1,0 +1,104 @@
+\documentclass[a4paper, 12pt]{article}
+
+\setlength{\textheight}{740pt} % text height 780
+\setlength{\textwidth}{500pt} % text width
+\setlength{\hoffset}{-20pt}
+\setlength{\voffset}{-30pt}
+\setlength{\topmargin}{0pt}
+\setlength{\headheight}{0pt}
+\setlength{\headsep}{0pt}
+\setlength{\oddsidemargin}{0pt}
+\setlength{\marginparsep}{0pt}
+\setlength{\footskip}{40pt}
+
+%\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{esvect}% vector \vv
+\newcommand{\hlr}[1]{%
+  \colorbox{red!50}{$\displaystyle#1$}}
+\newcommand{\hly}[1]{%
+  \colorbox{yellow!40}{$\displaystyle#1$}}
+\newcommand{\hlt}[1]{%
+  \colorbox{teal!40}{$\displaystyle#1$}}
+
+\setlength\columnsep{113pt}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+% TikZ libriries
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary{arrows,shapes}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{angles,quotes}
+% for right angle
+\usepackage{tkz-euclide}
+%%%\usetkzobj{all}
+% greek symbols
+\usepackage[Symbol]{upgreek}
+% math symbols
+\usepackage{amssymb} 
+\usepackage{amsmath}
+%\setlength\parindent{0pt} % set noindent for entire file
+\usepackage{indentfirst} % to indent the first paragraph
+\linespread{1.4} % line spacing for the whole document
+
+% create bold dash to print 
+\newcommand*\bdash{\textbf{---\ }}
+
+%\usepackage{hyperref}
+\usepackage[pdfusetitle]{hyperref}
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=blue}
+\title{Векторы в физике}
+\author{Олег Стенякин}
+\date{\today}
+
+\begin{document}
+%\thispagestyle{empty}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\part*{Векторы в физике}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents
+
+\clearpage
+
+\input{1vec_def.tex} % Понятие вектора
+
+\clearpage
+
+\input{2vec_equal.tex} % Равенство векторов
+
+\clearpage
+
+\input{3vec_mult.tex} % Умножение вектора на число
+
+\clearpage
+
+\input{4vec_sum.tex} % Сложение векторов
+
+\clearpage
+
+\input{5vec_subtr.tex} % Вычитание векторов
+
+\clearpage
+
+\input{6vec_modul.tex} % Модуль суммы векторов. 4 случая
+
+\clearpage
+
+\input{7vec_zakony.tex} % Законы сложения векторов и умножения векторов на число
+
+\clearpage
+
+\input{8vec_coord.tex} % Координаты (проекции) векторов
+
+\clearpage
+
+\input{9vec_comps.tex} % Разложение вектора на компоненты
+
+\end{document}

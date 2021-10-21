@@ -1,0 +1,41 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Вычитание векторов}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Разностью векторов} $\vv{a}$ и $\vv{b}$ называется такой вектор $\vv{c}$,
+сумма которого с вектором $\vv{b}$ равна вектору $\vv{a}$.
+Разность векторов обозначается так: $\vv{c} = \vv{a}-\vv{b}$.
+
+Для построения разности (см. рисунок~\ref{pic:raznost})
+двух векторов $\vv{a}$ и $\vv{b}$ отметим на плоскости
+произвольную точку $O$. Отложим от этой точки вектор $\vv{OA}$, равный $\vv{a}$.
+Затем от точки $A$ отложим вектор $\vv{AB}$, равный $-\vv{b}$ (то есть противоположный
+вектору $\vv{b}$). Сумма векторов $\vv{a}$ и $-\vv{b}$ является разностью векторов
+$\vv{a}$ и $\vv{b}$. Построим её по правилу треугольника. Таким образом,
+вектор $\vv{OB}$ будет искомой разностью векторов $\vv{a}$ и $\vv{b}$.
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[thick]
+    \coordinate [label=below:$O$](A) at (2cm,0cm);
+    \coordinate [label=above:$A$](B) at (5cm,3cm);
+    \coordinate [label=above:$B$](C) at (1cm,3cm);
+    \coordinate (D) at (-6cm,0cm);
+    \coordinate (E) at (-3cm,3cm);
+    \coordinate (F) at (-5cm,4cm);
+    \coordinate (G) at (-1cm,4cm);
+
+    \draw [blue, -Latex, very thick] (A) -- node[below right,black] {\large $\vv{a}$}(B);
+    \draw [blue, -Latex, very thick] (B) -- node[above,black] {\large $-\vv{b}$}(C);
+    \draw [red, -Latex, very thick] (A) -- (C);
+    \draw [blue, -Latex, very thick] (D) -- node[above left,black] {\large $\vv{a}$}(E);
+    \draw [blue, -Latex, very thick] (F) -- node[above,black] {\large $\vv{b}$}(G);
+    
+    \draw [fill=black] (A) circle (1.5pt);% node [above] {A};
+    \draw [fill=black] (B) circle (1.5pt);% node [right] {B};
+    \draw [fill=black] (C) circle (1.5pt);
+    
+    \draw (0cm,1.3cm) node {\large $\vv{c} =\vv{a}-\vv{b}$};
+  \end{tikzpicture}
+  \caption{\small Разность векторов.}\label{pic:raznost}
+\end{figure}
+
