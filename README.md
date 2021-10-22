@@ -1,5 +1,4 @@
 # Vectors for physics
-# @author Oleg Stenyakin oleg.stenyakin@yandex.ru
 #
 
 Basic definitions and operations with vectors in the plane are described:
