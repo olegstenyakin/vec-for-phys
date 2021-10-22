@@ -16,7 +16,7 @@ and how to find them in different cases.
 The scalar product and vector product are not included
 in the arcticle.
 
-##########################################
+___
 
 Векторы в физике
 
