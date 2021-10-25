@@ -10,9 +10,9 @@
 
 ## Build 'vec.pdf'
 
-'''
+```
 sudo apt install texlive-base texlive-extra-utils texlive-metapost texlive-latex-recommended texlive-latex-extra
 
 pdflatex vec.tex
 
-'''
+```
