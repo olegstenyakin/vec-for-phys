@@ -8,7 +8,7 @@
   - texlive-latex-recommended
   - texlive-latex-extra
 
-## Build 'vec.pdf'
+## Build vec.pdf
 
 ```
 sudo apt install texlive-base texlive-extra-utils texlive-metapost texlive-latex-recommended texlive-latex-extra
